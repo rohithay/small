@@ -18,10 +18,10 @@ except ImportError:
 
 # Import the GUI class (adjust path if needed)
 try:
-    from ai_search_gui import CronTabGUI  # Assuming you saved the previous code as ai_search_gui.py
+    from app import CronTabGUI  # Assuming you saved the previous code as app.py
 except ImportError:
-    print("Error: Could not find ai_search_gui.py in the same directory.")
-    print("Please save the GUI code as 'ai_search_gui.py' first.")
+    print("Error: Could not find app.py in the same directory.")
+    print("Please save the GUI code as 'app.py' first.")
     sys.exit(1)
 
 def main():
