@@ -1,0 +1,74 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "small"
+version = "1.0.0"
+description = "Quick access GUI to top AI tools with search bar"
+readme = "README.md"
+requires-python = ">=3.8"
+license = {text = "MIT"}
+authors = [
+    {name = "Rohitha Yarlagadda", email = "yrohitha996@gmail.com"},
+]
+maintainers = [
+    {name = "Rohitha Yarlagadda"},
+]
+
+keywords = ["gui", "ai", "search", "tkinter", "productivity"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: End Users/Desktop",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Desktop Environment :: Gnome",
+    "Topic :: Utilities",
+]
+
+dependencies = [
+    # Core dependencies (tkinter is standard library)
+]
+
+[project.optional-dependencies]
+dev = [
+    "black>=23.0",
+    "flake8",
+    "mypy",
+    "pytest>=7.0",
+]
+
+[project.scripts]
+small = "main:main"
+
+[project.urls]
+Homepage = "https://github.com/rohithay/small"
+Repository = "https://github.com/rohithay/small.git"
+"Bug Tracker" = "https://github.com/rohithay/small/issues"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["ai_search_hub*"]
+
+[tool.setuptools.package-dir]
+"" = "."
+
+[tool.black]
+line-length = 88
+target-version = ['py38']
+
+[tool.mypy]
+python_version = "3.8"
+warn_return_any = true
+warn_unused_configs = true
+
+[tool.pytest.ini_options]
+minversion = "7.0"
+addopts = "-ra -q --lf"
+testpaths = ["tests"]
